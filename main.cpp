@@ -36,15 +36,18 @@ int main() {
             delete(data[ind]);
             data.erase(data.begin() + ind);
         } else if (st == 'p') {
-            std::cin >> ind;
-            data[ind]->print(std::cout);
+            for (int i = 0; i < data.size(); ++i) {
+                data[i]->print(std::cout);
+            }
         } else if (st == 's') {
-            std::cin >> ind;
-            std::cout << data[ind]->area() << '\n';
+            for (int i = 0; i < data.size(); ++i) {
+                std::cout << data[i]->area() << '\n';
+            }
         } else if (st == 'c') {
-            std::cin >> ind;
-            Point cntr = data[ind]->center();
-            std::cout << cntr.x << ' ' << cntr.y << '\n';
+            for (int i = 0; i < data.size(); ++i) {
+                Point cntr = data[i]->center();
+                std::cout << cntr.x << ' ' << cntr.y << '\n';
+            }
         } else {
             std::cout << "invalid command" << '\n';
         }
